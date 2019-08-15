@@ -190,6 +190,30 @@ variable "health_check_unhealthy_threshold" {
   description = "The number of consecutive health check failures required before considering the target unhealthy"
 }
 
+variable "health_check_port" {
+  type        = number
+  default     = "80"
+  description = "The duration in seconds in between health checks"
+}
+
+variable "health_check_protocol" {
+  type        = string
+  default     = "HTTp"
+  description = "The HTTP response codes to indicate a healthy check"
+}
+
+variable "health_check_interval" {
+  type        = string
+  default     = "15"
+  description = "The duration in seconds in between health checks"
+}
+
+variable "health_check_matcher" {
+  type        = string
+  default     = "200-399"
+  description = "The HTTP response codes to indicate a healthy check"
+}
+
 variable "health_check_interval" {
   type        = string
   default     = "15"
