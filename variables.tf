@@ -224,3 +224,9 @@ variable "target_group_port" {
   default     = "80"
 }
 
+variable "load_balancer_type" {
+  type        = string
+  description = "The type of load balancer to create. Possible values are application or network. The default value is application."
+  default     = "application"
+}
+
