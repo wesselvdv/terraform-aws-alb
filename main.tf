@@ -9,7 +9,7 @@ module "default_label" {
 }
 
 resource "aws_security_group" "default" {
-  description = "Controls access to the LB"
+  description = "Controls access to the ALB"
   vpc_id      = var.vpc_id
   name        = module.default_label.id
   tags        = module.default_label.tags
@@ -48,7 +48,7 @@ resource "aws_security_group_rule" "https_ingress" {
 
 module "access_logs" {
   source        = "git::https://github.com/cloudposse/terraform-aws-lb-s3-bucket.git?ref=tags/0.2.0"
-  attributes    = compact(concat(var.attributes, ["lb", "access", "logs"]))
+  attributes    = compact(concat(var.attributes, ["alb", "access", "logs"]))
   delimiter     = var.delimiter
   name          = var.name
   namespace     = var.namespace
