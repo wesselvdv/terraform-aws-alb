@@ -198,7 +198,7 @@ variable "health_check_port" {
 
 variable "health_check_protocol" {
   type        = string
-  default     = "HTTp"
+  default     = "HTTP"
   description = "The HTTP response codes to indicate a healthy check"
 }
 
