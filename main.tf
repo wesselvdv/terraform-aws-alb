@@ -62,8 +62,8 @@ resource "aws_lb" "default" {
   name               = module.default_label.id
   tags               = module.default_label.tags
   internal           = var.internal
-  load_balancer_type = var.load_balancer_type
-  security_groups = var.load_balancer_type == "network" ? [] : compact(
+  load_balancer_type = "application" 
+  security_groups = compact(
     concat(var.security_group_ids, [aws_security_group.default.id]),
   )
   subnets                          = var.subnet_ids
